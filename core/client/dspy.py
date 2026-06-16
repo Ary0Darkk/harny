@@ -1,3 +1,4 @@
+import litellm
 import dspy
 import os
 from dotenv import load_dotenv
@@ -50,9 +51,9 @@ LLM_REGISTRY = {
 
 
 # example
-# dspy.settings.configure(lm=LLM_REGISTRY["Gemini"])
-# predict = dspy.Predict("question -> answer")
+dspy.settings.configure(lm=LLM_REGISTRY["Gemini"])
+predict = dspy.Predict("question -> answer")
 
-# prediction = predict(question="What is the capital of India?")
+prediction = predict(question="What is the capital of India?")
 
-# print(prediction.answer)
+print(prediction.answer)
